@@ -1,19 +1,18 @@
 import Posts from "./components/posts/Posts";
 import Autorization from "./components/autorization/Autorization";
-import Users from "./components/users/Users";
+import Users from "./components/posts/users/Users";
 import {Routes, Route} from 'react-router-dom'
 import './App.css';
 
 function App() {
-  return (
+    return (
 
         <Routes>
             <Route path="/" element={<Autorization/>}/>
-            <Route path="/posts" element={<Posts/>}/>
-            <Route path="/users" element={<Users/>}/>
+            <Route path="/main" element={<Posts/>}/>
         </Routes>
 
-  )
+    )
 }
 
 export default App;

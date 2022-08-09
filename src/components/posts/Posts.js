@@ -1,5 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import {Api} from "../Api";
+import Users from "./users/Users";
+import Photos from "./photos/Photos";
+import './styles/Posts.css'
 
 export default function Posts() {
 
@@ -9,27 +12,31 @@ export default function Posts() {
         viewPosts()
     }, []);
 
-
     function viewPosts() {
-
         Api.get('/Posts').then((resp) => {
             setPosts(resp.data)
+            console.log(resp.data)
         }).catch((error) => {
             console.warn(error, 'server error');
         })
     }
 
-
     function drawPosts() {
         const post = posts.map(item => {
-            return (
-                <div key={item.id}>{item.title}</div>
+            return (<div key={item.id} className='post'>
+                    <Photos userId={item.userId}/>
+                    <Users userId={item.userId}/>
+                    <div>Title: {item.title} </div>
+                    <div>{item.body} </div>
+                </div>
             )
         })
         return post
     }
 
     return (
-        <div>{drawPosts()}</div>
+        <div className='field-posts'>
+            {drawPosts()}
+        </div>
     )
 }
