@@ -21,7 +21,6 @@ export default function Posts() {
         })
     }
 
-    function drawPosts() {
         const post = posts.map(item => {
             return (<div key={item.id} className='post'>
                     <Photos userId={item.userId}/>
@@ -31,12 +30,10 @@ export default function Posts() {
                 </div>
             )
         })
-        return post
-    }
 
     return (
         <div className='field-posts'>
-            {drawPosts()}
+            {post}
         </div>
     )
 }
