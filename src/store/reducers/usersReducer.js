@@ -1,22 +1,19 @@
-const ADD_AUTOR = 'ADD_AUTOR'
-const DIS_AUTOR = 'DIS_AUTOR'
+const ADD_ALL_USERS='ADD_ALL_USERS'
 
 const defaultState={
-    count: 0
+    users:{}
 }
 
 export default  function usersReducer(state = defaultState, action) {
+    console.log(action.payload)
     switch (action.type) {
 
-        case ADD_AUTOR:
-            return{...state, count: state.count + action.payload}
+        case ADD_ALL_USERS:
+            return{...state,  users:{ ...state.users, ...action.payload}}
 
-        case DIS_AUTOR:
-            return{...state, count: state.count - action.payload}
         default:
             return (state)
     }
 }
 
-export const addNewAutor = (payload)=>({type: ADD_AUTOR, payload})
-export const disAutor = (payload)=>({type: DIS_AUTOR, payload})
+export const addAllUsers = (payload)=>({type: ADD_ALL_USERS, payload})
