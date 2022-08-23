@@ -6,7 +6,6 @@ export function axiosPosts() {
     return function (dispatch) {
         Api.get(`/posts`).then((resp) => {
             dispatch(addAllPosts(resp.data))
-            console.log(resp.data)
         }).catch((error) => {
             console.warn(error, 'server error');
         })

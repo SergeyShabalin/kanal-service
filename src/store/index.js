@@ -1,14 +1,11 @@
 import {createStore, combineReducers, applyMiddleware} from 'redux'
-import usersReducer from "./reducers/usersReducer";
-import photosReducer from "./reducers/photosReducer";
 import postsReducer from "./reducers/postsReduser";
+import usersReducer from "./reducers/usersReducer";
 import thunk from "redux-thunk";
 
-
 const rootReducer = combineReducers({
-    users: usersReducer,
-    photos: photosReducer,
-    posts:  postsReducer
+    posts: postsReducer,
+    users: usersReducer
 })
 
 export const store = createStore(rootReducer, applyMiddleware(thunk))

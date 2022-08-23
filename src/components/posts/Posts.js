@@ -1,11 +1,10 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from "react-redux";
 import {axiosPosts} from '../../store/asyncAction/Posts'
 import Users from "./users/Users";
 import Photos from "./photos/Photos";
-import './styles/Posts.css'
 import {axiosUsers} from "../../store/asyncAction/Users";
-
+import './styles/Posts.css'
 
 export default function Posts() {
 
@@ -14,22 +13,21 @@ export default function Posts() {
 
     useEffect(() => {
         dispatch(axiosPosts())
-
+        dispatch(axiosUsers())
     }, []);
 
     return (
         <div className='field-posts'>
-            <button onClick={() => dispatch(axiosPosts())}>ggg</button>
             <div>
                 {posts.map(post => (
-
                     <div className='post'>
-                        {/*<div><Photos userId={post.userId}/></div>*/}
-                        <div><Users userId={post.userId}/></div>
+                        <div><Photos userId={post.userId}/></div>
+                        <Users userId={post.userId}/>
                         <div> Title: {post.title}</div>
                         <div>{post.body} </div>
                     </div>
-                ))}</div>
+                ))}
+            </div>
         </div>
     )
 }
