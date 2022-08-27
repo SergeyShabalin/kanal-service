@@ -3,8 +3,9 @@ import {useDispatch, useSelector} from "react-redux";
 import {axiosPosts} from '../../store/asyncAction/Posts'
 import Users from "./users/Users";
 import Photos from "./photos/Photos";
-import {axiosUsers} from "../../store/asyncAction/Users";
 import './styles/Posts.css'
+import {axiosUsers} from "../../store/asyncAction/Users";
+import Header from "../header/Header";
 
 export default function Posts() {
 
@@ -16,9 +17,11 @@ export default function Posts() {
         dispatch(axiosUsers())
     }, []);
 
+
     return (
         <div className='field-posts'>
             <div>
+                <Header/>
                 {posts.map(post => (
                     <div className='post'>
                         <div><Photos userId={post.userId}/></div>

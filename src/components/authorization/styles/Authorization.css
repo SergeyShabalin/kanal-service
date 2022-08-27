@@ -1,0 +1,109 @@
+.main_auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form {
+    width: 480px;
+    height: 330px;
+    left: 132px;
+    top: 402px;
+    border: 4px solid #0a0a93;
+    border-radius: 2%;
+    box-shadow: 0 3px 5px rgba(14, 38, 133, 0.72);
+    font-weight: bolder;
+    font-size: 1.7rem;
+    margin: 5%;
+    padding: 1%;
+}
+
+
+.header_auth {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0e0e9a;
+    font-weight: 780;
+}
+
+.login_pass_field {
+    /*width: 100%;*/
+    height: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+
+.pass_field {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 30%;
+}
+
+.login_field {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    width: 100%;
+    height: 30%;
+}
+
+.label_auth {
+    font-weight: 800;
+    width: 35%;
+    margin-left: 2%;
+}
+
+.input_cont{
+    display: flex;
+}
+
+.input_auth {
+    width: 100%;
+    margin-left: 1%;
+    border-radius: 10px;
+    background-color: #acd7e3;
+    border: 3px solid #1111bb;
+    font-size: 1.3rem;
+    justify-content: right;
+    /*margin: 3%;*/
+    /*padding: 2%;*/
+}
+
+.field_submit_auth {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.submit_auth {
+    background-color: #E4B062;
+    border-radius: 15px;
+    width: 40%;
+    height: 60%;
+    font-weight: 900;
+    padding: 1%;
+    border: none;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.is_error{
+     color: red;
+    font-size: medium;
+    display: flex;
+    justify-content: center;
+
+}

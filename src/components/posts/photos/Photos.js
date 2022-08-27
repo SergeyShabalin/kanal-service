@@ -3,19 +3,23 @@ import {Api} from "../../Api";
 
 export default function Photos({userId}){
 
-    const [photos, setPhotos] = useState([])
+    const [photo, setPhoto] = useState({})
 
     useEffect(() => {
+     getPhoto()
+    }, []);
+
+    function getPhoto(){
         Api.get(`/photos/${userId}`).then((resp) => {
-            setPhotos(resp.data)
+            setPhoto(resp.data)
         }).catch((error) => {
             console.warn(error, 'server error');
         })
-    }, []);
+    }
 
     return (
         <div>
-            <img className='img' src={photos?.thumbnailUrl}></img>
+            <img className='img' src={photo?.thumbnailUrl}></img>
         </div>
     )
 
